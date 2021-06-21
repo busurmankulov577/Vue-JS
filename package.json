@@ -1,0 +1,29 @@
+{
+  "name": "newvue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "core-js": "^3.14.0",
+    "materialize-css": "^1.0.0-rc.2",
+    "register-service-worker": "^1.7.1",
+    "vue": "^2.6.14",
+    "vue-router": "^3.5.1",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-pwa": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "html-webpack-plugin": "^4.5.2",
+    "node-sass": "^6.0.0",
+    "sass": "^1.35.1",
+    "sass-loader": "^10.1.1",
+    "vue-template-compiler": "^2.6.14"
+  }
+}
