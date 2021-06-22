@@ -5,7 +5,7 @@
         <a href="#" @click.prevent="$emit('click')">
           <i class="material-icons black-text">dehaze</i>
         </a>
-        <span class="black-text">{{date | date('datetime')}}</span>
+        <span class="black-text">{{ date | date("datetime") }}</span>
       </div>
 
       <ul class="right hide-on-small-and-down">
@@ -39,33 +39,32 @@
   </nav>
 </template>
 
-
 <script>
 export default {
-  data: () =>({
+  data: () => ({
     date: new Date(),
     interval: null,
-    dropdown: null
+    dropdown: null,
   }),
-  methods:{
-    logout(){
-      console.log('Logout')
-      this.$router.push('/login?message=logout')
-    }
+  methods: {
+    async logout() {
+      await this.$store.dispatch('logout')
+      this.$router.push("/login?message=logout");
+    },
   },
-  mounted(){
+  mounted() {
     this.interval = setInterval(() => {
-      this.date = new Date()
-    }, 1000)
-    this.dropdown = M.Dropdown.init(this.$refs.dropdown,{
-      constrainWidth: false
-    })
+      this.date = new Date();
+    }, 1000);
+    this.dropdown = M.Dropdown.init(this.$refs.dropdown, {
+      constrainWidth: false,
+    });
   },
-  beforeDestroy(){
-    clearInterval(this.interval)
-    if(this.dropdown && this.dropdown.destroy){
-      this.dropdown.destroy()
+  beforeDestroy() {
+    clearInterval(this.interval);
+    if (this.dropdown && this.dropdown.destroy) {
+      this.dropdown.destroy();
     }
-  }
-}
+  },
+};
 </script>
