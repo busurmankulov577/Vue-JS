@@ -16,7 +16,7 @@
             data-target="dropdown"
             ref="dropdown"
           >
-            USER NAME
+            {{name}}
             <i class="material-icons right">arrow_drop_down</i>
           </a>
 
@@ -48,8 +48,13 @@ export default {
   }),
   methods: {
     async logout() {
-      await this.$store.dispatch('logout')
+      await this.$store.dispatch("logout");
       this.$router.push("/login?message=logout");
+    },
+  },
+  computed: {
+    name() {
+      return this.$store.getters.info.name;
     },
   },
   mounted() {
@@ -57,7 +62,7 @@ export default {
       this.date = new Date();
     }, 1000);
     this.dropdown = M.Dropdown.init(this.$refs.dropdown, {
-      constrainWidth: false,
+      constrainWidth: false
     });
   },
   beforeDestroy() {
