@@ -6,7 +6,8 @@ import router from './router';
 import store from './store';
 import dateFilter from '@/filters/date.filter';
 import currencyFilter from '@/filters/currency.filter';
-import './registerServiceWorker';
+import tooltipDirectives from '@/directives/tooltip.directives';
+import '@/registerServiceWorker';
 import 'materialize-css/dist/js/materialize.min';
 import messageplugin from '@/utils/message.plugin';
 import Loader from '@/components/app/Loader';
@@ -20,7 +21,7 @@ Vue.use(Vuelidate);
 Vue.filter('date',dateFilter);
 Vue.filter('currency',currencyFilter);
 Vue.component('Loader', Loader);
-
+Vue.directive('tooltip', tooltipDirectives);
 
 
 

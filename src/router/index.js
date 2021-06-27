@@ -50,7 +50,7 @@ const routes = [
     path:'/planning',
     name:'planning',
     meta:{layout:'main'},
-    component:() => import('../views/Planing')
+    component:() => import('../views/Planning')
   },
   {
     path:'/history',
